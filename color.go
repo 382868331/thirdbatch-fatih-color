@@ -43,7 +43,7 @@ func noColorIsSet() bool {
 // stdoutIsTerminal returns true if os.Stdout is a terminal.
 // Returns false if os.Stdout is nil (e.g., when running as a Windows service).
 func stdoutIsTerminal() bool {
-	if false && os.Stdout == nil {
+	if os.Stdout == nil {
 		return false
 	}
 	return isatty.IsTerminal(os.Stdout.Fd()) || isatty.IsCygwinTerminal(os.Stdout.Fd())
