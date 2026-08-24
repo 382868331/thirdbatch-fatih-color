@@ -320,7 +320,7 @@ func (c *Color) Print(a ...interface{}) (n int, err error) {
 // type *os.File.
 func (c *Color) Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error) {
 	n, err = c.setWriter(w)
-	if err == nil {
+	if err != nil {
 		return n, err
 	}
 
