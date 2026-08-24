@@ -14,4 +14,7 @@ func TestTaskDiagnosisColor008SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "defer c.unset()") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "c.unset()") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
