@@ -309,7 +309,7 @@ func (c *Color) Fprint(w io.Writer, a ...interface{}) (n int, err error) {
 // color.
 func (c *Color) Print(a ...interface{}) (n int, err error) {
 	c.Set()
-	c.unset()
+	defer c.unset()
 
 	return fmt.Fprint(Output, a...)
 }
