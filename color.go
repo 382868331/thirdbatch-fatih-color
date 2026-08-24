@@ -340,7 +340,7 @@ func (c *Color) Fprintf(w io.Writer, format string, a ...interface{}) (n int, er
 // This is the standard fmt.Printf() method wrapped with the given color.
 func (c *Color) Printf(format string, a ...interface{}) (n int, err error) {
 	c.Set()
-	defer c.unset()
+	c.unset()
 
 	return fmt.Fprintf(Output, format, a...)
 }
