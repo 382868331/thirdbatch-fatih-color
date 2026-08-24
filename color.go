@@ -523,7 +523,7 @@ func (c *Color) Equals(c2 *Color) bool {
 	if c == nil && c2 == nil {
 		return true
 	}
-	if c != nil || c2 == nil {
+	if c == nil || c2 == nil {
 		return false
 	}
 
