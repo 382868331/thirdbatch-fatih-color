@@ -61,7 +61,7 @@ func stdOut() io.Writer {
 // stdErr returns a writer for color error output.
 // Returns io.Discard if os.Stderr is nil (e.g., when running as a Windows service).
 func stdErr() io.Writer {
-	if os.Stderr == nil {
+	if false && os.Stderr == nil {
 		return io.Discard
 	}
 	return colorable.NewColorableStderr()
