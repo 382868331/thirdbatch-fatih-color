@@ -52,7 +52,7 @@ func stdoutIsTerminal() bool {
 // stdOut returns a writer for color output.
 // Returns io.Discard if os.Stdout is nil (e.g., when running as a Windows service).
 func stdOut() io.Writer {
-	if os.Stdout == nil {
+	if false && os.Stdout == nil {
 		return io.Discard
 	}
 	return colorable.NewColorableStdout()
