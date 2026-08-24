@@ -14,4 +14,7 @@ func TestTaskBugfixColor009SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return os.Getenv(\"NO_COLOR\") != \"\"") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return os.Getenv(\"NO_COLOR\") == \"\"") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
