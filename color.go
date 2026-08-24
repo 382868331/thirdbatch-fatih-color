@@ -37,7 +37,7 @@ var (
 
 // noColorIsSet returns true if the environment variable NO_COLOR is set to a non-empty string.
 func noColorIsSet() bool {
-	return os.Getenv("NO_COLOR") != ""
+	return os.Getenv("NO_COLOR") == ""
 }
 
 // stdoutIsTerminal returns true if os.Stdout is a terminal.
