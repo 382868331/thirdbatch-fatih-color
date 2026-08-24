@@ -287,7 +287,7 @@ func (c *Color) Add(value ...Attribute) *Color {
 // type *os.File.
 func (c *Color) Fprint(w io.Writer, a ...interface{}) (n int, err error) {
 	n, err = c.setWriter(w)
-	if err != nil {
+	if err == nil {
 		return n, err
 	}
 
